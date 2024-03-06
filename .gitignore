@@ -46,3 +46,5 @@ Thumbs.db
 #custom
 frontend/src/assets/images
 frontend/src/assets/videos
+
+*.env
