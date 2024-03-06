@@ -1,0 +1,8 @@
+.home-container {
+    background-image: url('/assets/background.jpg');
+    background-size: cover;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: top; /* Center vertically */
+  }
