@@ -1,0 +1,116 @@
+.education {
+  &__list {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  &__card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.75rem;
+    padding: 1.75rem 2rem;
+    cursor: default;
+
+    @media (max-width: 560px) {
+      flex-direction: column;
+      gap: 1.25rem;
+      padding: 1.5rem;
+    }
+  }
+
+  &__card-left {
+    flex-shrink: 0;
+  }
+
+  &__logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface-alt);
+    padding: 0.5rem;
+  }
+
+  &__logo-placeholder {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(var(--accent-rgb), 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  &__card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__school-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  &__school-location {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.2rem;
+  }
+
+  &__degrees {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  &__degree {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface-alt);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+  }
+
+  &__degree-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  &__degree-title {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  &__degree-field {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  &__degree-year {
+    flex-shrink: 0;
+  }
+}

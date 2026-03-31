@@ -1,0 +1,47 @@
+<section class="education section section-alt" id="education">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Education</span>
+      <h2>Academic Background</h2>
+    </div>
+
+    <div class="education__list">
+      @for (school of schools; track school.name) {
+        <div class="education__card card">
+
+          <div class="education__card-left">
+            @if (school.logoUrl) {
+              <img [src]="school.logoUrl" [alt]="school.logoAlt" class="education__logo" />
+            } @else {
+              <div class="education__logo-placeholder" [attr.aria-label]="school.logoAlt">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+            }
+          </div>
+
+          <div class="education__card-body">
+            <div class="education__school-name">{{ school.name }}</div>
+            <div class="education__school-location">{{ school.location }}</div>
+
+            <div class="education__degrees">
+              @for (deg of school.degrees; track deg.field) {
+                <div class="education__degree">
+                  <div class="education__degree-info">
+                    <span class="education__degree-title">{{ deg.degree }}</span>
+                    <span class="education__degree-field">{{ deg.field }}</span>
+                  </div>
+                  <span class="education__degree-year tag">{{ deg.year }}</span>
+                </div>
+              }
+            </div>
+          </div>
+
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

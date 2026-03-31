@@ -1,0 +1,136 @@
+.contact {
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 2rem 1.75rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  &__card-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &--linkedin {
+      background: rgba(10, 102, 194, 0.1);
+      color: #0a66c2;
+      border: 1px solid rgba(10, 102, 194, 0.2);
+    }
+
+    &--github {
+      background: var(--surface-alt);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+  }
+
+  &__card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+  }
+
+  &__card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: 0.25rem;
+    transition: gap var(--transition);
+
+    .contact__card:hover & {
+      gap: 0.55rem;
+    }
+  }
+}
+
+// ── Footer ─────────────────────────────────────────────────────────────────────
+.footer {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 0;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  &__logo-bracket {
+    color: var(--accent);
+  }
+
+  &__copy {
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+      color: var(--text-subtle);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: color var(--transition);
+
+      &:hover { color: var(--accent); }
+    }
+  }
+}

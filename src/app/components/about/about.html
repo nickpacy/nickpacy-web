@@ -1,0 +1,94 @@
+<section class="about section section-alt" id="about">
+  <div class="container">
+
+    <div class="about__layout">
+
+      <!-- Left: Photo + quick facts -->
+      <div class="about__left">
+        <div class="about__photo-wrap">
+          <!-- Profile photo -->
+          <img src="me.jpeg" alt="Nick Pacy" class="about__photo" />
+          <div class="about__photo-badge">
+            <span class="about__available-dot" aria-hidden="true"></span>
+            Open to Opportunities
+          </div>
+        </div>
+
+        <div class="about__quick-facts">
+          <div class="about__fact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+            <span>10+ Years Experience</span>
+          </div>
+          <div class="about__fact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>Open to New Opportunities</span>
+          </div>
+          <div class="about__fact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+            <span>Remote or On-Site</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Bio + highlights -->
+      <div class="about__right">
+        <div class="section-header" style="text-align: left; margin-bottom: 1.75rem;">
+          <span class="section-label">About Me</span>
+          <h2>Turning Complex Problems<br>into Elegant Solutions</h2>
+        </div>
+
+        <p class="about__bio">
+          Senior full-stack software engineer with 10+ years of experience designing, building,
+          and operating secure, data-driven applications at scale. I bring end-to-end ownership
+          across backend services, web applications, databases, and cloud infrastructure.
+        </p>
+        <p class="about__bio">
+          Known for rapidly ramping up on complex systems, owning ambiguous problems, and
+          delivering reliable production software that real users depend on.
+        </p>
+
+        <div class="about__highlights">
+          @for (item of highlights; track item.title) {
+            <div class="about__highlight card">
+              <div class="about__highlight-icon">
+                @switch (item.icon) {
+                  @case ('layers') {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+                    </svg>
+                  }
+                  @case ('chart') {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/>
+                    </svg>
+                  }
+                  @case ('cloud') {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+                    </svg>
+                  }
+                  @case ('users') {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                    </svg>
+                  }
+                }
+              </div>
+              <div>
+                <h4 class="about__highlight-title">{{ item.title }}</h4>
+                <p class="about__highlight-desc">{{ item.description }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

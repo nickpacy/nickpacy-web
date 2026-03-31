@@ -1,0 +1,100 @@
+<section class="experience section section-alt" id="experience">
+  <div class="container">
+
+    <div class="section-header">
+      <span class="section-label">Career</span>
+      <h2>Work Experience</h2>
+      <p>A track record of delivering impactful software across industries.</p>
+    </div>
+
+    <div class="experience__timeline">
+      @for (entry of companies; track entry.company; let last = $last) {
+        <div class="experience__item">
+
+          <!-- Timeline dot + line -->
+          <div class="experience__connector" [class.last]="last">
+            <div class="experience__dot" [class.current]="entry.roles[0].current">
+              @if (entry.roles[0].current) {
+                <span class="experience__dot-pulse" aria-hidden="true"></span>
+              }
+            </div>
+          </div>
+
+          <!-- Company card -->
+          <div class="experience__card card">
+
+            <!-- Company header -->
+            <div class="experience__company-header">
+              <div>
+                <h3 class="experience__company-name">{{ entry.company }}</h3>
+                <div class="experience__company-meta">
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    {{ entry.location }}
+                  </span>
+                  @if (entry.totalDuration) {
+                    <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                      </svg>
+                      {{ entry.totalDuration }}
+                    </span>
+                  }
+                </div>
+              </div>
+            </div>
+
+            <!-- Roles -->
+            <div class="experience__roles">
+              @for (role of entry.roles; track role.title; let firstRole = $first; let lastRole = $last) {
+                <div class="experience__role" [class.experience__role--first]="firstRole" [class.experience__role--last]="lastRole">
+
+                  <div class="experience__role-header">
+                    <div class="experience__role-title-row">
+                      <h4 class="experience__role-title">{{ role.title }}</h4>
+                      @if (role.current) {
+                        <span class="experience__badge">Current</span>
+                      }
+                    </div>
+                    <div class="experience__role-meta">
+                      <span>{{ role.type }}</span>
+                      <span class="experience__role-dot" aria-hidden="true"></span>
+                      <span>{{ role.period }}</span>
+                      <span class="experience__role-dot" aria-hidden="true"></span>
+                      <span>{{ role.duration }}</span>
+                      @if (role.workStyle) {
+                        <span class="experience__role-dot" aria-hidden="true"></span>
+                        <span>{{ role.workStyle }}</span>
+                      }
+                    </div>
+                  </div>
+
+                  @if (role.bullets.length > 0) {
+                    <ul class="experience__bullets">
+                      @for (bullet of role.bullets; track bullet) {
+                        <li>{{ bullet }}</li>
+                      }
+                    </ul>
+                  }
+
+                  @if (role.tags && role.tags.length > 0) {
+                    <div class="experience__tags">
+                      @for (tag of role.tags; track tag) {
+                        <span class="tag">{{ tag }}</span>
+                      }
+                    </div>
+                  }
+
+                </div>
+              }
+            </div>
+
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

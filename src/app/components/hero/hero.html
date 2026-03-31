@@ -1,0 +1,98 @@
+<section class="hero section" id="home">
+  <!-- Animated background grid -->
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__grid"></div>
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+  </div>
+
+  <div class="hero__inner container">
+    <div class="hero__content">
+      <div class="hero__greeting">
+        <span class="hero__greeting-line" aria-hidden="true">// hello world</span>
+      </div>
+
+      <h1 class="hero__name">
+        Nick <span class="gradient-text">Pacy</span>
+      </h1>
+
+      <div class="hero__role-wrapper" aria-live="polite">
+        <span class="hero__role">{{ currentRole }}</span>
+      </div>
+
+      <p class="hero__tagline">
+        Building scalable applications, data-driven solutions, and seamless user experiences
+        across the full stack.
+      </p>
+
+      <div class="hero__cta">
+        <a href="#projects" class="btn btn-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+          View My Work
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          Let's Connect
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <span class="hero__stat-number">10+</span>
+          <span class="hero__stat-label">Technologies</span>
+        </div>
+        <div class="hero__stat-divider" aria-hidden="true"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-number">Full</span>
+          <span class="hero__stat-label">Stack</span>
+        </div>
+        <div class="hero__stat-divider" aria-hidden="true"></div>
+        <div class="hero__stat">
+          <span class="hero__stat-number">Data</span>
+          <span class="hero__stat-label">Driven</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual accent panel -->
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__code-card">
+        <div class="hero__code-header">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+          <span class="hero__code-filename">profile.ts</span>
+        </div>
+        <pre class="hero__code-body"><code><span class="code-keyword">const</span> <span class="code-var">engineer</span> = <span class="code-brace">&#123;</span>
+  <span class="code-key">name</span><span class="code-punct">:</span> <span class="code-str">'Nick Pacy'</span><span class="code-punct">,</span>
+  <span class="code-key">role</span><span class="code-punct">:</span> <span class="code-str">'Full Stack Engineer'</span><span class="code-punct">,</span>
+  <span class="code-key">focus</span><span class="code-punct">:</span> <span class="code-brace">[</span>
+    <span class="code-str">'Application Dev'</span><span class="code-punct">,</span>
+    <span class="code-str">'Data Analysis'</span><span class="code-punct">,</span>
+    <span class="code-str">'Cloud & DevOps'</span><span class="code-punct">,</span>
+  <span class="code-brace">]</span><span class="code-punct">,</span>
+  <span class="code-key">stack</span><span class="code-punct">:</span> <span class="code-brace">[</span>
+    <span class="code-str">'Angular'</span><span class="code-punct">,</span>  <span class="code-str">'.NET'</span><span class="code-punct">,</span>
+    <span class="code-str">'Node.js'</span><span class="code-punct">,</span> <span class="code-str">'AWS'</span><span class="code-punct">,</span>
+    <span class="code-str">'SQL'</span><span class="code-punct">,</span>    <span class="code-str">'Docker'</span><span class="code-punct">,</span>
+  <span class="code-brace">]</span><span class="code-punct">,</span>
+  <span class="code-key">available</span><span class="code-punct">:</span> <span class="code-bool">true</span><span class="code-punct">,</span>
+<span class="code-brace">&#125;</span><span class="code-punct">;</span>
+</code></pre>
+        <div class="hero__code-cursor" aria-hidden="true"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll indicator -->
+  <a href="#about" class="hero__scroll" aria-label="Scroll to about">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </a>
+</section>

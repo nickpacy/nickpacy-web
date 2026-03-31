@@ -1,0 +1,271 @@
+.hero {
+  position: relative;
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 3rem 0 4rem;
+
+  // ── Background ─────────────────────────────────────────────────────────────
+  &__bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.35;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  }
+
+  &__glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+
+    &--1 {
+      width: 600px;
+      height: 600px;
+      background: var(--accent);
+      top: -100px;
+      right: -100px;
+    }
+
+    &--2 {
+      width: 400px;
+      height: 400px;
+      background: #a78bfa;
+      bottom: -50px;
+      left: -50px;
+    }
+  }
+
+  // ── Layout ─────────────────────────────────────────────────────────────────
+  &__inner {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+
+  // ── Content ────────────────────────────────────────────────────────────────
+  &__greeting {
+    margin-bottom: 1rem;
+  }
+
+  &__greeting-line {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  &__name {
+    font-size: clamp(2.75rem, 7vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  &__role-wrapper {
+    height: 2rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  &__role {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    animation: roleSlide 0.5s ease forwards;
+  }
+
+  &__tagline {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.75;
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+  }
+
+  &__cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  &__stats {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  &__stat {
+    display: flex;
+    flex-direction: column;
+
+    &-number {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.1;
+    }
+
+    &-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
+    }
+
+    &-divider {
+      width: 1px;
+      height: 2.5rem;
+      background: var(--border);
+    }
+  }
+
+  // ── Code Card ──────────────────────────────────────────────────────────────
+  &__visual {
+    @media (max-width: 900px) {
+      order: -1;
+    }
+  }
+
+  &__code-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  &__code-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface-alt);
+    border-bottom: 1px solid var(--border);
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+
+      &--red    { background: #ff5f57; }
+      &--yellow { background: #ffbd2e; }
+      &--green  { background: #28ca41; }
+    }
+  }
+
+  &__code-filename {
+    margin-left: 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-subtle);
+  }
+
+  &__code-body {
+    padding: 1.25rem 1.5rem;
+    margin: 0;
+    overflow-x: auto;
+
+    code {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 1.8;
+      display: block;
+    }
+  }
+
+  &__code-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1rem;
+    background: var(--accent);
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 1px;
+    animation: blink 1.1s step-end infinite;
+  }
+
+  // ── Scroll Indicator ───────────────────────────────────────────────────────
+  &__scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-subtle);
+    text-decoration: none;
+    animation: scrollBounce 2s ease-in-out infinite;
+    transition: color var(--transition), border-color var(--transition);
+    z-index: 1;
+
+    &:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+  }
+}
+
+// ── Code Syntax Colors ────────────────────────────────────────────────────────
+.code-keyword { color: #c792ea; }
+.code-var     { color: #82aaff; }
+.code-key     { color: #f07178; }
+.code-str     { color: #c3e88d; }
+.code-bool    { color: #ff9cac; }
+.code-brace   { color: var(--text-muted); }
+.code-punct   { color: var(--text-subtle); }
+
+[data-theme="light"] {
+  .code-keyword { color: #7c3aed; }
+  .code-var     { color: #1d4ed8; }
+  .code-key     { color: #dc2626; }
+  .code-str     { color: #16a34a; }
+  .code-bool    { color: #d97706; }
+}
+
+// ── Animations ────────────────────────────────────────────────────────────────
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+@keyframes roleSlide {
+  from { transform: translateY(1rem); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}

@@ -1,0 +1,198 @@
+.experience {
+  &__timeline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 0 1.5rem;
+    align-items: start;
+    padding-bottom: 2.5rem;
+
+    &:last-child { padding-bottom: 0; }
+  }
+
+  // ── Timeline connector ────────────────────────────────────────────────────
+  &__connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.35rem;
+    height: 100%;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 1.5rem;
+      bottom: -2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      background: var(--border);
+    }
+
+    &.last::after { display: none; }
+  }
+
+  &__dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 2px solid var(--bg-alt);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+
+    &.current {
+      background: var(--accent);
+      border-color: var(--bg-alt);
+    }
+  }
+
+  &__dot-pulse {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    opacity: 0.5;
+    animation: dotPulse 2s ease-in-out infinite;
+  }
+
+  // ── Company card ─────────────────────────────────────────────────────────
+  &__card {
+    padding: 0;
+    cursor: default;
+    overflow: hidden;
+
+    &:hover { transform: none; }
+  }
+
+  &__company-header {
+    padding: 1.25rem 1.75rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface-alt);
+  }
+
+  &__company-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  &__company-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+  }
+
+  // ── Roles ─────────────────────────────────────────────────────────────────
+  &__roles {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__role {
+    padding: 1.25rem 1.75rem;
+    border-bottom: 1px solid var(--border);
+
+    &--last { border-bottom: none; }
+  }
+
+  &__role-header {
+    margin-bottom: 0.875rem;
+  }
+
+  &__role-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.3rem;
+  }
+
+  &__role-title {
+    font-size: 0.975rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  &__role-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    color: var(--text-subtle);
+  }
+
+  &__role-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--border);
+    display: inline-block;
+  }
+
+  &__badge {
+    background: rgba(var(--accent-rgb), 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(var(--accent-rgb), 0.25);
+    border-radius: 2rem;
+    padding: 0.1rem 0.6rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  // ── Bullets ───────────────────────────────────────────────────────────────
+  &__bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+
+    li {
+      font-size: 0.865rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      padding-left: 1.25rem;
+      position: relative;
+
+      &::before {
+        content: '▸';
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-size: 0.65rem;
+        top: 0.25em;
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+}
+
+@keyframes dotPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50%       { transform: scale(1.4); opacity: 0.2; }
+}
