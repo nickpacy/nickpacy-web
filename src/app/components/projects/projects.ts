@@ -31,7 +31,7 @@ export class Projects {
         'Personal full-stack reservation booking application. Handles scheduling, availability management, and booking confirmations with a clean, user-friendly interface.',
       tags: ['Angular', 'Node.js', 'SQL', 'TypeScript'],
       links: [
-        { label: 'GitHub', href: '#', icon: 'github' },
+        { label: 'Visit Site', href: 'https://reservations.nickpacy.com', icon: 'external' },
       ],
     },
     {
